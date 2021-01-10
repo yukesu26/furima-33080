@@ -2,16 +2,16 @@
 
 ## users テーブル
 
-| Column          | Type   | Options     |
-| --------------  | ------ | ----------- |
-| nick_name       | string | null: false |
-| email           | string | null: false |
-| password        | string | null: false |
-| last_name       | string | null: false |
-| first_name      | string | null: false | 
-| last_name_kana  | string | null: false |
-| first_name_kana | string | null: false |
-| birth_day       | date   | null: false |
+| Column             | Type   | Options                   |
+| ----------------   | ------ | ------------------------- |
+| nick_name          | string | null: false               |
+| email              | string | null: false, unique: true |
+| encrypted_password | string | null: false               |
+| last_name          | string | null: false               |
+| first_name         | string | null: false               |  
+| last_name_kana     | string | null: false               |
+| first_name_kana    | string | null: false               |
+| birth_day          | date   | null: false               |
 
 ### Association
 - has_many :products
@@ -20,18 +20,17 @@
 
 
 ## products テーブル
-| Column          | Type      | Options     |
-| --------------  | --------- | ----------- |
-| item            | string    | null: false |
-| item_memo       | string    | null: false |
-| category        | string    | null: false |
-| image           | string    | null: false |
-| item_state      | string    | null: false | 
-| delivery_fee    | string    | null: false |
-| shipping_place  | string    | null: false |
-| send_day        | date      | null: false |
-| price           | int       | null: false |            
-| user            | reference | null: false, foreign_key: true |
+| Column             | Type      | Options     |
+| -----------------  | --------- | ----------- |
+| name               | string    | null: false |
+| memo               | string    | null: false |
+| category_id        | integer   | null: false |
+| item_state_id      | integer   | null: false | 
+| delivery_fee_id    | integer   | null: false |
+| shipping_place_id  | integer   | null: false |
+| send_day_id        | date      | null: false |
+| price              | integer   | null: false |            
+| user               | reference | null: false, foreign_key: true |
 
 ### Association
 - has_many :destinations
@@ -61,7 +60,7 @@
 | --------------- | --------- | ------------------------------ |
 | user            | reference | null: false, foreign_key: true |
 | product         | reference | null: false, foreign_key: true |
- |
+ 
 
 
 ### Association 
