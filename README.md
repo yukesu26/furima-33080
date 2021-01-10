@@ -23,7 +23,7 @@
 | Column             | Type      | Options     |
 | -----------------  | --------- | ----------- |
 | name               | string    | null: false |
-| memo               | string    | null: false |
+| memo               | text      | null: false |
 | category_id        | integer   | null: false |
 | item_state_id      | integer   | null: false | 
 | delivery_fee_id    | integer   | null: false |
@@ -33,25 +33,24 @@
 | user               | reference | null: false, foreign_key: true |
 
 ### Association
-- has_many :destinations
-- has_many :buys
+- has_one :buy
+- belongs_to :user
 
 ## destinations テーブル
 
 | Column          | Type      | Options     |
 | --------------  | ------    | ----------- |
-| post_code       | integer   | null: false |
-| prefectures     | string    | null: false |
+| post_code       | string    | null: false |
+| shipping_place  | integer   | null: false |
 | city            | string    | null: false |
-| address         | integer   | null: false |
-| phone_number    | integer   | null: false | 
+| address         | string    | null: false |
+| phone_number    | string    | null: false | 
 | building_name   | string    |             |
 | product         | reference | null: false, foreign_key: true |
 
 
 ### Association
-- belongs_to :product
-- belongs_to :buy
+ - belongs_to :buy
 
 
 ## buys テーブル
