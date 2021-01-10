@@ -1,4 +1,4 @@
-<mxfile host="65bd71144e" modified="2021-01-10T12:27:59.753Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.52.1 Chrome/83.0.4103.122 Electron/9.3.5 Safari/537.36" version="13.10.0" etag="WXSrvPyQjy3T2kFNKjxZ" type="embed">
+<mxfile host="65bd71144e" modified="2021-01-10T12:57:26.823Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.52.1 Chrome/83.0.4103.122 Electron/9.3.5 Safari/537.36" version="13.10.0" etag="WugEs_RP8hYIiz0BBFjC" type="embed">
     <diagram id="p0TnjbUd2gW1PoHSHFOu" name="ページ1">
         <mxGraphModel dx="2736" dy="627" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
@@ -64,8 +64,8 @@
                 <mxCell id="63" value="" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
                     <mxGeometry x="-1280" y="580" width="230" height="150" as="geometry"/>
                 </mxCell>
-                <mxCell id="64" value="post_code (string型, NOT NULL)&lt;br&gt;shipping_place (integer型 NOT NULL)&lt;br&gt;city (string型 NOT NULL)&lt;br&gt;address (string型 NOT NULL)&lt;br&gt;phone_number (string型 NOT NULL)&lt;br&gt;building_name (string型 NOT NULL)&lt;br&gt;product (references型)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
-                    <mxGeometry x="-1270" y="590" width="220" height="100" as="geometry"/>
+                <mxCell id="64" value="post_code (string型, NOT NULL)&lt;br&gt;shipping_place_id (integer型 NOT NULL)&lt;br&gt;city (string型 NOT NULL)&lt;br&gt;address (string型 NOT NULL)&lt;br&gt;phone_number (string型 NOT NULL)&lt;br&gt;building_name (string型 NOT NULL)&lt;br&gt;buy_id (references型)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+                    <mxGeometry x="-1275" y="590" width="230" height="100" as="geometry"/>
                 </mxCell>
                 <mxCell id="65" value="buysテーブル" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
                     <mxGeometry x="-1700" y="520" width="180" height="60" as="geometry"/>

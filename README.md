@@ -28,7 +28,7 @@
 | item_state_id      | integer   | null: false | 
 | delivery_fee_id    | integer   | null: false |
 | shipping_place_id  | integer   | null: false |
-| send_day_id        | date      | null: false |
+| send_day_id        | integer   | null: false |
 | price              | integer   | null: false |            
 | user               | reference | null: false, foreign_key: true |
 
@@ -38,15 +38,15 @@
 
 ## destinations テーブル
 
-| Column          | Type      | Options     |
-| --------------  | ------    | ----------- |
-| post_code       | string    | null: false |
-| shipping_place  | integer   | null: false |
-| city            | string    | null: false |
-| address         | string    | null: false |
-| phone_number    | string    | null: false | 
-| building_name   | string    |             |
-| product         | reference | null: false, foreign_key: true |
+| Column            | Type      | Options     |
+| ----------------  | ------    | ----------- |
+| post_code         | string    | null: false |
+| shipping_place_id | integer   | null: false |
+| city              | string    | null: false |
+| address           | string    | null: false |
+| phone_number      | string    | null: false | 
+| building_name     | string    |             |
+| buy               | reference | null: false, foreign_key: true |
 
 
 ### Association
