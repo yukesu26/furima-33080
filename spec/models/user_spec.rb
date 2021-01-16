@@ -95,7 +95,7 @@ RSpec.describe User, type: :model do
       @user.valid? 
       expect(@user.errors.full_messages).to include("Birth day can't be blank")
     end 
-    it "passwordは半角英数字のみでは登録できない" do
+    it "passwordは半角数字のみでは登録できない" do
       @user.password = "000000"
       @user.password_confirmation = "000000"
       @user.valid? 
