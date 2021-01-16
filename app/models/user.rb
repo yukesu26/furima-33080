@@ -20,8 +20,8 @@ class User < ApplicationRecord
     end
   end
   
-    validates :encrypted_password,:password,:password_confirmation,length:{minimum:6},format:{with: /(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{6,}/}
+    validates :password,:password_confirmation,length:{minimum:6},format:{with: /(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{6,}/}
   
     has_many :products
-  has_many :buys
+    has_many :buys
 end
