@@ -100,6 +100,33 @@ RSpec.describe User, type: :model do
       @user.password_confirmation = "000000"
       @user.valid? 
       expect(@user.errors.full_messages).to include("Password is invalid", "Password confirmation is invalid")
-   end 
+    end 
+    it "passwordは英語のみでは登録できない" do
+      @user.password = "aaaaaa"
+      @user.password_confirmation = "aaaaaa"
+      @user.valid? 
+      expect(@user.errors.full_messages).to include("Password is invalid", "Password confirmation is invalid")
+    end
+    it "passwordは全角では登録できない" do
+      @user.password = "ZZZZZZ"
+      @user.password_confirmation = "ZZZZZZ"
+      @user.valid? 
+      expect(@user.errors.full_messages).to include("Password is invalid", "Password confirmation is invalid")
+    end
+    it "emaiは＠が含まれていないと登録できない" do
+      @user.email = "hogehoge"
+      @user.valid?
+      expect(@user.errors.full_messages).to include("Email is invalid")
+    end
+    it "firsy_nameは漢字、平仮名、カタカナ以外では登録できない" do
+      @user.first_name = "kaka"
+      @user.valid?
+      expect(@user.errors.full_messages).to include("First name is invalid")
+    end
+    it "last_nameは漢字、平仮名、カタカナ以外では登録できない" do
+      @user.last_name = "kaka"
+      @user.valid?
+      expect(@user.errors.full_messages).to include("Last name is invalid")
+    end
   end
 end
