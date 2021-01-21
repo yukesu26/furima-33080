@@ -2,7 +2,7 @@
   factory :product do
     name                 {"てとてと"}
     memo                 {"ととと"}
-    price                {"1000"}
+    price                {1000}
     category_id          {2}
     item_state_id        {2}
     delivery_fee_id      {2}

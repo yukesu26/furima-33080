@@ -22,27 +22,27 @@ require 'rails_helper'
       expect(@product.errors.full_messages).to include("Memo can't be blank")
     end
     it "カテゴリーが空では登録できない" do
-      @product.category_id = '1'
+      @product.category_id = 1
       @product.valid?
       expect(@product.errors.full_messages).to include("Category must be other than 1")
     end
     it "商品の状態が空では登録できない" do
-      @product.item_state_id = '1'
+      @product.item_state_id = 1
       @product.valid?
       expect(@product.errors.full_messages).to include("Item state must be other than 1")
     end
     it "配送料の負担が空では登録できない" do
-      @product.delivery_fee_id = '1'
+      @product.delivery_fee_id = 1
       @product.valid?
       expect(@product.errors.full_messages).to include("Delivery fee must be other than 1")
     end
     it "発送元が空では登録できない" do
-      @product.shipping_place_id = '1'
+      @product.shipping_place_id = 1
       @product.valid?
       expect(@product.errors.full_messages).to include("Shipping place must be other than 1")
     end
     it "発送までの日数が空では登録できない" do
-      @product.send_day_id = '1'
+      @product.send_day_id = 1
       @product.valid?
       expect(@product.errors.full_messages).to include("Send day must be other than 1")
     end
@@ -52,12 +52,12 @@ require 'rails_helper'
       expect(@product.errors.full_messages).to include("Price is not a number")
     end
     it "販売価格が300円以下では登録できない" do
-      @product.price = '299'
+      @product.price = 299
       @product.valid?
       expect(@product.errors.full_messages).to include("Price must be greater than 300")
     end
     it "販売価格が9999999円以上では登録できない" do
-      @product.price = '10000000'
+      @product.price = 10000000
       @product.valid?
       expect(@product.errors.full_messages).to include("Price must be less than 9999999")
     end
