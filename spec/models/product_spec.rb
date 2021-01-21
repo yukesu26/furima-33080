@@ -54,12 +54,12 @@ require 'rails_helper'
     it "販売価格が300円以下では登録できない" do
       @product.price = 299
       @product.valid?
-      expect(@product.errors.full_messages).to include("Price must be greater than 300")
+       expect(@product.errors.full_messages).to include("Price must be greater than 299")
     end
     it "販売価格が9999999円以上では登録できない" do
       @product.price = 10000000
       @product.valid?
-      expect(@product.errors.full_messages).to include("Price must be less than 9999999")
+      expect(@product.errors.full_messages).to include("Price must be less than 10000000")
     end
     it "価格が全角数字では登録できない" do
       @product.price = '１０００'
@@ -70,6 +70,16 @@ require 'rails_helper'
       @product.image = nil
       @product.valid?
       expect(@product.errors.full_messages).to include("Image can't be blank")
+    end
+    it "価格が半角英数混合では登録できない" do
+      @product.price = '11aa'
+      @product.valid?
+      expect(@product.errors.full_messages).to include("Price is not a number")
+    end
+    it "価格が半角英語だけでは登録できない" do
+      @product.price = 'aaaaa'
+      @product.valid?
+      expect(@product.errors.full_messages).to include("Price is not a number")
     end
 
   end
