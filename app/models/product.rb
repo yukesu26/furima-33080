@@ -23,5 +23,5 @@ class Product < ApplicationRecord
     belongs_to :send_day
     belongs_to :shipping_place
     has_one_attached :image
-    belongs_to :user, optional: true
+    belongs_to :user, required: true
 end
