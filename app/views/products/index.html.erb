@@ -128,12 +128,10 @@
     <% if @products[0] != nil %> 
       <% @products.each do |product| %>
       <li class='list'>
-        <%= link_to "#" do %>
-           
+        <%= link_to product_path(product.id) do %>
         <div class='item-img-content'>
           <%= image_tag product.image, class: "item-img" %>
-            
-              <%# 商品が売れていればsold outを表示しましょう %>
+               <%# 商品が売れていればsold outを表示しましょう %>
               <%# <div class='sold-out'> %>
                 <%# <span>Sold Out!!</span> %>
               <%# </div> %>
@@ -155,7 +153,7 @@
       </li>
       <% end %>
    <% end %>
-
+ 
          <% if @products.length == 0 %> 
    <li class='list'>
       <%= link_to '#' do %>
