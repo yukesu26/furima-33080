@@ -1,4 +1,4 @@
-class Oredr
+class Order
   include ActiveModel::Model
   attr_accessor :nick_name, :email, :encrypted_passwod, :last_name, :first_name, :last_name_kana, :first_name_kana, :birth_day, :post_code, :shipping_place_id, :city, :address, :phone_number, :building_name
   with_options presence: true do
@@ -23,4 +23,14 @@ class Oredr
   end
     validates :password,:password_confirmation,length:{minimum:6},format:{with: /(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{6,}/}
     validates :building_name
+
+    def save
+       user = User.create(nich_name: nick_name, email: email, encrypted_passwod: encrypted_passwod, last_name: last_name, first_name: first_name, last_name_kana: last_name_kana, first_name_kana: first_name_kana, birth_day: birth_day)
+      # 住所の情報を保存
+      Destination.create(post_code: post_code, shipping_place_id: shipping_place_id, city: city, address: address, phone_number: phone_number, building_name: building_name, user_id: user.id)
+      # 寄付金の情報を保存
+      Buy.create(product_id: product_id, user_id: user.id)
+    end
+
+
 end
