@@ -1,3 +1,3 @@
 class Destination < ApplicationRecord
-  belongs_to :buys
+  belongs_to :buy
 end

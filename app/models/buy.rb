@@ -1,5 +1,5 @@
 class Buy < ApplicationRecord
-has_one :destinations
-belongs_to :users
-belongs_to :products
+has_one :destination
+belongs_to :user
+belongs_to :product
 end
