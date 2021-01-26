@@ -5,6 +5,6 @@ FactoryBot.define do
     city {'青森市'}
     address {'青森1-2-3'}
     phone_number {'09012345678'}
-    building_name {'青森ハイツ'}
+    building_name {''}
   end
 end
