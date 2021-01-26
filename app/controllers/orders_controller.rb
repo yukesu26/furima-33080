@@ -10,9 +10,11 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.new(order_params)
-    if @order.save
+    if @order.valid? 
+      @order.save
       redirect_to root_path
     else
+      @product = Product.find(params[:product_id])
       render :index
     end
      
