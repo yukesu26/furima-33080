@@ -134,12 +134,13 @@
         <div class='item-img-content'>
           <%= image_tag product.image, class: "item-img" %>
       
-       <% if product.buy.present? %>
-         <div class='sold-out'> 
-         <span>Sold Out!!</span>
-         </div>
+          <% if product.buy.present? %>
+           <div class='sold-out'> 
+                 <span>Sold Out!!</span>
+           </div>
+           <% end %>
         </div>
-        
+ 
         <div class='item-info'>
           <h3 class='item-name'>
             <%= product.name %>
@@ -156,7 +157,7 @@
       </li>
       <% end %>
    <% end %>
-  <% end %>
+  
          <% if @products.length == 0 %> 
    <li class='list'>
       <%= link_to '#' do %>

@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
   before_action :move_to_index, only: [:edit, :update, :destroy]
   def index
     @products = Product.all.order(created_at: :desc)
-  end
+   end
 
   def new
     @product = Product.new
