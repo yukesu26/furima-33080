@@ -11,6 +11,7 @@ class Order
     validates :token, presence: true
   end
     validate :building_name
+    
 
     def save
       buy = Buy.create(product_id: product_id, user_id: user_id)

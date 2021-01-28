@@ -4,7 +4,7 @@ require 'rails_helper'
     @order = FactoryBot.build(:order)
   end
  describe '商品の購入' do
-    context "商品が購入できる場合" do
+  context "商品が購入できる場合" do
       it "全ての項目が存在すれば購入できる" do
         expect(@order).to be_valid
       end
@@ -69,7 +69,10 @@ require 'rails_helper'
       @order.valid?
       expect(@order.errors.full_messages).to include("Phone number is invalid")
     end
+    it "tokenが空では登録できないこと" do
+      @order.token = nil
+      @order.valid?
+      expect(@order.errors.full_messages).to include("Token can't be blank")
+    end
   end
-
-
 end
