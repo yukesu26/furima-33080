@@ -12,7 +12,7 @@ class Order
     validates :user_id
     validates :product_id
   end
-    validate :building_name
+    
     
 
     def save

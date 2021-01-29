@@ -74,5 +74,15 @@ require 'rails_helper'
       @order.valid?
       expect(@order.errors.full_messages).to include("Token can't be blank")
     end
+    it "user_idが空では登録できないこと" do
+      @order.user_id = nil
+      @order.valid?
+       expect(@order.errors.full_messages).to include("User can't be blank")
+    end
+    it "product_idが空では登録できないこと" do
+      @order.product_id = nil
+      @order.valid?
+       expect(@order.errors.full_messages).to include("Product can't be blank")
+    end
   end
 end
