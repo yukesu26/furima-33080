@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :authenticate_user!, only: [:index, :show]
+  before_action :authenticate_user!, only: [:index]
   before_action :set_product
   before_action :move_to_index, only: [:index] 
    
@@ -8,9 +8,7 @@ class OrdersController < ApplicationController
     @order = Order.new
   end
 
-  def new
-    @order = Order.new
-  end
+  
 
   def create
        @order = Order.new(order_params)
