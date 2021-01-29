@@ -24,4 +24,5 @@ class Product < ApplicationRecord
     belongs_to :shipping_place
     has_one_attached :image
     belongs_to :user
+    has_one :buy
 end
