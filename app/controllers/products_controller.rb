@@ -24,7 +24,11 @@ class ProductsController < ApplicationController
   end 
 
   def edit
+    if current_user.id == @product.user_id || @product.buy.present?
+      redirect_to root_path
+    end
   end
+
 
   def destroy
     if @product.destroy
@@ -53,9 +57,11 @@ class ProductsController < ApplicationController
       redirect_to root_path
     end
   end
+
   def set_product
     @product = Product.find(params[:id])
   end
+
   def move_to_index
     unless user_signed_in?
       redirect_to action: :index
